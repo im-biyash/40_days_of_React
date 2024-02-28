@@ -47,10 +47,10 @@ export default function Todo() {
         >
           {todos.map((item, index) => (
             <p key={index} className=" bg-slate-500 p-2 ">
-                <div>
+                <ul>
 
               {item}
-                </div>
+                </ul>
             </p>
           ))}
         </div>
