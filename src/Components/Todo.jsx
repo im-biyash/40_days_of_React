@@ -30,11 +30,11 @@ export default function Todo() {
       style={{ background: "linear-gradient(to right, #009fff, #ec2f4b)" }}
     >
       <div className="mb-4 text-4xl text-white font-serif md:text-center mt-7 ml-3">
-        <h1>A minor todo app by Biyash Shrestha</h1>
+        <h1>A minor todo app by Biyash Shrestha.</h1>
       </div>
-      <div className="flex p-4 flex-col items-center justify-center rounded bg-[#462d38]">
-        <h1 className="text-3xl text-white text-center mr-8 mb-7">
-          Todo list app
+      <div className="flex p-4 flex-col items-center justify-center rounded-3xl bg-[#1b212a]">
+        <h1 className="text-3xl text-white text-center mr-8 mb-7  ">
+         Your tasks here
         </h1>
         <div className="flex gap-2">
           <input
@@ -57,13 +57,14 @@ export default function Todo() {
             width: "300px",
             maxHeight: "300px",
             overflowY: "auto",
+            marginTop: "10px", // Add margin-top to create spacing
           }}
         >
-          <ul>
+          <ul className="mr-4">
             {todos.map((task, index) => (
               <li
                 key={index}
-                className="text-xl text-white mb-2 bg-slate-500 rounded-xl flex justify-between p-2"
+                className="text-xl mr-7  text-white mb-2 bg-slate-500 rounded-xl flex justify-between p-2"
               >
                 <span>{task}</span>
                 <MdDelete
