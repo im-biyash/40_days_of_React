@@ -1,34 +1,28 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import Statecolor from "./Components/Statecolor";
+import Interview from "./Components/Interview";
+import Navbar from "./Components/Navbar";
+import Button from "./Components/Button";
+import { counterContext } from "./context/context";
+import Todo from "./Components/Todo";
 function App() {
-  const [card, setCard] = useState([]);
+  // const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => {
-        console.log(res.data);
-        setCard(res.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []); // <-- Provide an empty dependency array to useEffect to run it only once
+  // const handleCount = () => {
+  //   setCount(count + 1);
+  // };
+
 
   return (
     <>
-      <div className="flex gap-4 flex-wrap">
-        {card.map((item) => {
-          return (
-            <div  className="cards border-2 red max-w-[23vw]">
-              <h1>{item.title}</h1>
-              <p>{item.body}</p>
-              <span>BY: {item.userId}</span>
-            </div>
-          );
-        })}
+    {/* <counterContext.Provider value={count}>
+      <div className=" flex flex-col justify-center items-center ali h-screen bg-black">
+        <Statecolor/>
       </div>
+      
+    </counterContext.Provider> */}
+    <Todo/>
     </>
   );
 }
