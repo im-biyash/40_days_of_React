@@ -21,7 +21,7 @@ function Quiz() {
               {questions[currentQuestion].options.map((option, index) => (
                 <button
                   key={index}
-                  className="text-black p-2 rounded focus:outline-none hover:bg-gray-400"
+                  className="text-black p-2 w-2 rounded focus:outline-none hover:bg-gray-400"
                 
                 >
                   {option}
