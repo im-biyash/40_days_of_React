@@ -17,7 +17,7 @@ function Quiz() {
             {questions[currentQuestion].question}
           </h2>
         </div>
-        <div className="flex flex-col my-6 mx-4 w-full p-10">
+        <div className="flex flex-col  mx-4 w-full p-10">
               {questions[currentQuestion].options.map((option, index) => (
                 <button
                   key={index}
