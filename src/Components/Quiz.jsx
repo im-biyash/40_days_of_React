@@ -36,8 +36,12 @@ function App() {
 <>
 {
   showResult ? ( 
-    <div >
-     <h1>Results</h1>
+    <div className=" text-white flex flex-col justify-center items-center h-screen bg-black">
+      <h1 className="text-white mb-5 text-3xl">Quiz app</h1>
+     <h1 >Results</h1>
+     <h1 className="text-4xl text-red-500">Congratulations</h1>
+     <h2 className="mt-7">Your score is {score} out of {questions.length}</h2>
+
     </div>
   ):
 <div className=" text-white flex flex-col justify-center items-center h-screen bg-black">
