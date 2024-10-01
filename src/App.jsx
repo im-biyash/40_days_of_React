@@ -6,23 +6,16 @@ import Navbar from "./Components/Navbar";
 import Button from "./Components/Button";
 import { counterContext } from "./context/context";
 import Todo from "./Components/Todo";
+import Datafetching from "./Components/Datafetching";
+import Quiz from "./Components/Quiz";
+import OwnTodo from "./Components/OwnTodo";
 function App() {
-  // const [count, setCount] = useState(0);
-
-  // const handleCount = () => {
-  //   setCount(count + 1);
-  // };
+  
 
 
   return (
     <>
-    {/* <counterContext.Provider value={count}>
-      <div className=" flex flex-col justify-center items-center ali h-screen bg-black">
-        <Statecolor/>
-      </div>
-      
-    </counterContext.Provider> */}
-    <Todo/>
+    <OwnTodo/>
     </>
   );
 }

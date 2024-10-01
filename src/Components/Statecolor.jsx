@@ -15,8 +15,9 @@ function Statecolor() {
 
   return (
     <div className="bg-black h-screen flex justify-center items-center">
+      <h1 className="text-white mb-7">Enter your first name</h1>
       <div
-        className="card bg-blue-200 h-[300px] w-[250px]"
+        className="card bg-blue-200 mt-4 h-[300px] w-[250px]"
         style={{ backgroundColor: color }}
       >
         {color === "white" && (

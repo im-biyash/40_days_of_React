@@ -1,7 +1,7 @@
 const questions = [
   {
-    question: "what is the name of capital of Australia",
-    options: ["Canberra, Sydney, Melbourne, Perth"],
+    question: "what is the most beautiful thing in Sushma ?",
+    options: ["Canberra", "Sydney", "Melbourne", "Perth"],
     answer: "Canberra",
   },
   {
