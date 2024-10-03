@@ -18,17 +18,15 @@ export default function Todo() {
     console.log(newTodo);
   };
 
-  const handleDelete = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos.splice(index, 1);
-    setTodos(updatedTodos);
+   const handleDelete = (indextoDelete) => {
+   setTodos(todos.filter((_,index) => index !== indextoDelete))
   };
 
   const handleCheck = (index) => {
     const updatedTodos = [...todos];
     updatedTodos[index].isCompleted = !updatedTodos[index].isCompleted;
     setTodos(updatedTodos); 
-     
+    
   };
 
 

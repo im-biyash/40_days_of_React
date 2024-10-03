@@ -9,13 +9,19 @@ import Todo from "./Components/Todo";
 import Datafetching from "./Components/Datafetching";
 import Quiz from "./Components/Quiz";
 import OwnTodo from "./Components/OwnTodo";
+import{BrowserRouter as Router,Routes, Route} from "react-router-dom"
 function App() {
   
 
 
   return (
     <>
-    <OwnTodo/>
+    <Router>
+     <Routes>
+         <Route path = "/" element = {<Todo />}></Route>
+     </Routes>
+    </Router>
+    
     </>
   );
 }
