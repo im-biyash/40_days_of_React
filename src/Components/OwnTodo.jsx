@@ -1,50 +1,53 @@
 import React, { useState } from "react";
 
 const OwnTodo = () => {
-  const [todo, setTodo] = useState([]);
   const [value, setValue] = useState("");
+  const [todos, setTodo] = useState([]);
 
-  const addTodo = () => {
-    if (value.trim()) {
-      setTodo([...todo, value]);
-      setValue("");
-    }
+  const handleAdd = () => {
+    if (value.trim() === "") return; 
+    setTodo([...todos, value]);
+    setValue("");
   };
 
-  const deleteTodo = (indexToDelete) => {
-    setTodo(todo.filter((_, index) => index !== indexToDelete));
+  const handleDelete = (index) => {
+    const updatedTodos = todos.filter((_, i) => i !== index); 
+    setTodo(updatedTodos);
   };
 
   return (
-    <div className="flex flex-col container mx-auto h-screen p-4 mt-4">
-      <h1 className="mx-auto">Todo App</h1>
-      <div className="flex items-center gap-2 justify-center mt-5">
-        <input
-          type="text"
-          placeholder="Enter the tasks"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          className="border border-gray-300 p-2"
-        />
-        <button className="btn bg-blue-500 text-white p-2" onClick={addTodo}>
-          Add Task
-        </button>
-      </div>
-
-      <div className="flex flex-col items-center mt-5 space-y-2">
-        {todo.map((task, index) => (
-          <div key={index} className="flex items-center justify-between gap-4 w-[50vh]">
-            <h1 className="text-lg text-center font-medium bg-slate-200 p-2 flex-grow">
-              {task}
-            </h1>
-            <button 
-              className="bg-red-500 rounded-2xl text-white p-2"
-              onClick={() => deleteTodo(index)}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+    <div className="h-screen mx-auto p-4">
+      <div className="flex flex-col justify-center items-center p-3 mt-4">
+        <h1>Your Todos</h1>
+        <div className="flex justify-between items-center">
+          <input
+            className="bg-slate-200"
+            type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button className="bg-green-400 p-1 rounded ml-3" onClick={handleAdd}>
+            Add
+          </button>
+        </div>
+        <div className="w-1/4 flex flex-col items-center flex-wrap mt-4">
+          <ul className="w-[50vh] relative">
+            {todos.map((todo, index) => (
+              <li
+                key={index}
+                className="bg-blue-950 text-white p-2 mb-2 rounded w-full relative"
+              >
+                {todo}
+                <button
+                  className="bg-red-500 text-white p-1 rounded absolute left-[350px] mb-2"
+                  onClick={() => handleDelete(index)}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

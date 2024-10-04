@@ -9,19 +9,20 @@ import Todo from "./Components/Todo";
 import Datafetching from "./Components/Datafetching";
 import Quiz from "./Components/Quiz";
 import OwnTodo from "./Components/OwnTodo";
-import{BrowserRouter as Router,Routes, Route} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 function App() {
-  
-
-
   return (
     <>
-    <Router>
-     <Routes>
-         <Route path = "/" element = {<Todo />}></Route>
-     </Routes>
-    </Router>
-    
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Datafetching />}></Route>
+          </Routes>
+        </Router>
+      </QueryClientProvider>
     </>
   );
 }

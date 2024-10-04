@@ -1,8 +1,8 @@
 const questions = [
   {
-    question: "what is the most beautiful thing in Sushma ?",
-    options: ["Canberra", "Sydney", "Melbourne", "Perth"],
-    answer: "Canberra",
+    question: "who is rimon ?",
+    options: ["mote", "hati", "kaley", "good"],
+    answer: "mote",
   },
   {
     question: "Who wrote 'To Kill a Mockingbird'?",
